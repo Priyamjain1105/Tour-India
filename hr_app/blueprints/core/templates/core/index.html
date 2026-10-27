@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Kataria TalentFlow{% endblock %}
+
+{% block head_content %}
+<!-- Custom page-specific head content -->
+{% endblock %}
+
+{% block content %}
+<div class="relative overflow-hidden">
+    <!-- Grid Pattern with Light Brand Glow Accent -->
+    <div
+        class="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-40 -z-10">
+    </div>
+
+    <!-- Hero Section -->
+    <section class="py-16 sm:py-24 lg:py-28 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto text-center">
+
+            <!-- Kataria Red Pill Badge -->
+            <div
+                class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-kataria-50 border border-kataria-100 text-kataria-700 text-xs font-semibold mb-6">
+                <span class="w-1.5 h-1.5 rounded-full bg-kataria-600 animate-pulse"></span>
+                Enterprise HR Operations Platform
+            </div>
+
+            <!-- Bold Headline -->
+            <h1
+                class="text-3xl sm:text-5xl lg:text-6xl font-bold text-slate-900 tracking-tight leading-tight sm:leading-tight">
+                Centralize Hiring Operations & Pipeline Analytics
+            </h1>
+
+            <!-- Subtitle -->
+            <p class="mt-5 text-sm sm:text-base text-slate-600 max-w-2xl mx-auto leading-relaxed">
+                Replace fragmented spreadsheets with a standardized, enterprise platform to record candidate progress,
+                monitor daily interview throughput, and optimize conversion metrics.
+            </p>
+
+            <!-- Touch Actions -->
+            <div
+                class="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 max-w-xs sm:max-w-none mx-auto">
+                {% if current_user.is_authenticated %}
+                <a href="{{ url_for('auth.dashboard') }}"
+                    class="w-full sm:w-auto inline-flex items-center justify-center bg-slate-900 hover:bg-kataria-600 text-white px-5 py-2.5 rounded-lg font-semibold text-xs transition-colors duration-200 shadow-sm active:scale-[0.98]">
+                    Open Workspace Dashboard &rarr;
+                </a>
+                {% else %}
+                <a href="{{ url_for('auth.index') }}"
+                    class="w-full sm:w-auto inline-flex items-center justify-center bg-slate-900 hover:bg-kataria-600 text-white px-5 py-2.5 rounded-lg font-semibold text-xs transition-colors duration-200 shadow-sm active:scale-[0.98]">
+                    Access Portal
+                </a>
+                <a href="#overview"
+                    class="w-full sm:w-auto inline-flex items-center justify-center bg-white hover:bg-slate-50 text-slate-700 border border-slate-200/80 px-5 py-2.5 rounded-lg font-semibold text-xs transition active:scale-[0.98]">
+                    Learn More
+                </a>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Clean Overview Grid Cards -->
+    <section id="overview" class="border-t border-slate-200/80 py-12 sm:py-16 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
+
+                <!-- Card 1 -->
+                <div
+                    class="p-6 bg-slate-50/50 rounded-2xl border border-slate-200/80 hover:border-kataria-100 hover:shadow-sm transition duration-200 space-y-2 group">
+                    <div
+                        class="w-8 h-8 rounded-lg bg-kataria-50 text-kataria-600 border border-kataria-100 flex items-center justify-center text-xs font-bold mb-3 group-hover:bg-kataria-600 group-hover:text-white transition-colors">
+                        01
+                    </div>
+                    <h3 class="text-sm font-bold text-slate-900 tracking-tight">Unified Pipeline</h3>
+                    <p class="text-xs text-slate-500 leading-relaxed">Track daily candidate progressions across all
+                        departments in a single production database.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div
+                    class="p-6 bg-slate-50/50 rounded-2xl border border-slate-200/80 hover:border-kataria-100 hover:shadow-sm transition duration-200 space-y-2 group">
+                    <div
+                        class="w-8 h-8 rounded-lg bg-kataria-50 text-kataria-600 border border-kataria-100 flex items-center justify-center text-xs font-bold mb-3 group-hover:bg-kataria-600 group-hover:text-white transition-colors">
+                        02
+                    </div>
+                    <h3 class="text-sm font-bold text-slate-900 tracking-tight">Real-Time Metrics</h3>
+                    <p class="text-xs text-slate-500 leading-relaxed">Automate core selection, offer acceptance, and
+                        drop rate calculations safely.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div
+                    class="p-6 bg-slate-50/50 rounded-2xl border border-slate-200/80 hover:border-kataria-100 hover:shadow-sm transition duration-200 space-y-2 group">
+                    <div
+                        class="w-8 h-8 rounded-lg bg-kataria-50 text-kataria-600 border border-kataria-100 flex items-center justify-center text-xs font-bold mb-3 group-hover:bg-kataria-600 group-hover:text-white transition-colors">
+                        03
+                    </div>
+                    <h3 class="text-sm font-bold text-slate-900 tracking-tight">Enterprise Scalable</h3>
+                    <p class="text-xs text-slate-500 leading-relaxed">Role-isolated, multi-recruiter backend designed
+                        for long-term data persistence.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    console.log("Kataria TalentFlow Index Page Loaded");
+</script>
+{% endblock %}

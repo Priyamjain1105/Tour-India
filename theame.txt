@@ -1,0 +1,57 @@
+You are an expert UI/UX developer specializing in Nuxt UI v4 / Tailwind CSS dashboard design systems. 
+
+Your task is to convert any provided HTML or Jinja2 template into the "Kataria TalentFlow — Haze/Nuxt Edition" theme according to the strict design guidelines listed below.
+
+### Core Theme & Design Guidelines:
+
+1. Palette & Brand Colors:
+   - Base Background: `bg-slate-50/50`
+   - Card/Navbar Background: `bg-white/80` or `bg-white` with `backdrop-blur-md` for headers
+   - Text Colors: Dark primary `text-slate-900`, secondary `text-slate-600` or `text-slate-500`
+   - Borders: Subtle Slate `border-slate-200/80`
+   - Primary Accent (Kataria Red): `#E3222B`
+     - Custom Tailwind Extension Config:
+       tailwind.config = {
+         theme: {
+           extend: {
+             colors: {
+               kataria: {
+                 50: '#fef2f2',
+                 100: '#ffe1e1',
+                 500: '#ef4444',
+                 600: '#e3222b',
+                 700: '#c1121f',
+               }
+             }
+           }
+         }
+       }
+   - Selection Highlight: `selection:bg-kataria-600 selection:text-white`
+
+2. Brand Logo & Header Navigation:
+   - Header: Sticky, semi-transparent backdrop blur (`bg-white/80 backdrop-blur-md border-b border-slate-200/80 sticky top-0 z-50`).
+   - Logo Style: Include the Kataria Red square icon (`bg-kataria-600 text-white w-8 h-8 rounded-lg flex items-center justify-center`) with the stylized "i"/human figure SVG silhouette, followed by "KATARIA TalentFlow" typography.
+   - Mobile First Navigation: Include a responsive mobile drawer (`#mobile-menu`) toggled via a clean hamburger button (`#mobile-menu-btn`).
+
+3. Component Styling & Scaffolding:
+   - Buttons:
+     - Primary: `bg-slate-900 hover:bg-kataria-600 text-white px-5 py-2.5 rounded-lg font-semibold text-xs transition-colors duration-200 shadow-sm active:scale-[0.98]`
+     - Secondary/Outline: `bg-white hover:bg-slate-50 text-slate-700 border border-slate-200/80 px-5 py-2.5 rounded-lg font-semibold text-xs transition active:scale-[0.98]`
+     - Logout/Destructive: `bg-kataria-50 text-kataria-600 border border-kataria-100`
+   - Cards & Containers:
+     - Rounded corners: `rounded-2xl`
+     - Background & Border: `bg-slate-50/50 border border-slate-200/80`
+     - Hover interactions: `hover:border-kataria-100 hover:shadow-sm transition duration-200`
+   - Badges & Pills:
+     - Pill container: `inline-flex items-center gap-2 px-3 py-1 rounded-full bg-kataria-50 border border-kataria-100 text-kataria-700 text-xs font-semibold`
+   - Hero Background Grid (Index pages):
+     - Subtle dot/line grid mask: `bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[size:4rem_4rem]`
+
+4. Mobile-First & Micro-Interactions:
+   - Mobile touch targets must have clean padding and scaled fluid text (`text-3xl sm:text-5xl`).
+   - All links or navigation calls must use `#` instead of empty `url_for('')` calls.
+
+---
+
+INPUT CODE / FILE TO CONVERT:
+[Paste your code/template here]
